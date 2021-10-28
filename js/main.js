@@ -1,18 +1,21 @@
+//import statements go at the top
+import { getData } from "./components/TheDataMiner.js";
+
 (() => {
   const theTeam = document.querySelector("#teamSection"),
     theTemplate = document.querySelector("#bio-template").content;
   // set up a fetch fn to get some data
 
-  function getData() {
-    fetch("./includes/functions.php") //go and get the data
-      .then((res) => res.json()) //clean the data and convert it to a plain object
-      .then((data) => {
-        console.log(data);
+  // function getData() {
+  //   fetch("./includes/functions.php") //go and get the data
+  //     .then((res) => res.json()) //clean the data and convert it to a plain object
+  //     .then((data) => {
+  //       console.log(data);
 
-        buildTeam(data[0]);
-      })
-      .catch((error) => console.error(error));
-  }
+  //       buildTeam(data[0]);
+  //     })
+  //     .catch((error) => console.error(error));
+  // }
 
   function buildTeam(info) {
     debugger;
@@ -39,5 +42,5 @@
     });
   }
 
-  getData();
+  getData(buildTeam);
 })();
